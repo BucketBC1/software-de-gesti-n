@@ -1,0 +1,154 @@
+.inventario{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0
+}
+
+/* ========== title ========== */
+.inventario .title {
+    font-size: 24px;
+    margin-top: 0;
+    text-align: center;
+}
+/* ========== title ========== */
+
+
+/* ========== contenido ========== */
+.contenidoInventario {
+    background-color: rgb(204, 204, 204);
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 0;
+
+
+}
+
+.contenidoInventario a{
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.contenidoInventario a:hover{
+    color: rgb(93, 0, 93);
+}
+/* ========== contenido ========== */
+
+
+/* ========== botones ========== */
+.inventario .botonesInventario {
+    margin-top: 15px;
+    left: 0;
+}
+
+.inventario .botonesInventario .btn {
+    padding: 10px;
+    margin: 0 10px;
+    background-color: rgb(93, 0, 93);
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.inventario .botonesInventario .btn-primary {
+    margin-left: 0;
+}
+
+@media (max-width: 900px) {
+    .inventario .botonesInventario .btn{
+    margin-left: 0;
+    margin-top: 5px;
+
+    }
+}
+
+/* ========== botones ========== */
+
+
+/* ========== categorias ========== */
+.inventario .categoriasInventario .title2 {
+    display: flex;
+    color: rgb(93, 0, 93);
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.inventario .categoriasInventario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(204, 204, 204);
+    margin-top: 20px;
+    height: 100%;
+    width: 100%;;
+    border-radius: 10px;
+    min-width: 0;
+    min-height: 0;
+}
+
+.inventario .categoriasInventario .categoriasList {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 20px;
+}
+
+.categoriasList::-webkit-scrollbar {
+    width: 10px;
+    background: rgb(204, 204, 204);
+    border-radius: 8px;
+}
+
+.categoriasList::-webkit-scrollbar-thumb {
+    background: rgb(102, 102, 102);
+    border-radius: 8px;
+}
+
+.categoriasList::-webkit-scrollbar-thumb:hover {
+    background: rgb(93, 0, 93); 
+}
+
+.inventario .categoriasInventario .categoriasList .categoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 120PX;
+    height: fit-content;
+}
+
+.inventario .categoriasInventario .categoriasList .categoria:hover {
+    background-color: rgb(179, 179, 179);
+}
+
+.inventario .categoriasInventario .categoriasList .categoria a{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 2px solid rgb(93, 0, 93);
+}
+
+.inventario .categoriasInventario .categoriasList .categoria .nombreCategoria {
+    margin-top: 5PX;
+    color: black;
+    font-size: 12px;
+}
+
+
+/* ========== categorias ========== */
+
+
+
+

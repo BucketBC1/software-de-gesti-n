@@ -1,0 +1,146 @@
+
+
+
+.sideBar {
+    width: 220px;
+    min-width: 180px;
+    max-width: 260px;
+    background: #555;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: fit-content;
+}
+
+@media (max-width: 900px) {
+    .sideBar {
+        flex-direction: row;
+        width: 100vw;
+        height: auto;
+        min-width: 0;
+        max-width: none;
+    }
+}
+/* Nav */
+
+
+/* title */
+.sideBar div .navLogo a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    border-radius: 4px;
+    margin: 3px;
+    height: 50px
+}
+
+.sideBar div .navLogo{
+    padding: 2px;
+}
+/* title */
+
+
+
+/* List */
+.sideBar .navUl {
+    list-style: none;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.sideBar .navUl div {
+    display: flex;
+    align-items: left;
+    margin: 1px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sideBar .navUl div:hover {
+    background-color: rgb(102, 102, 102);
+    color: rgb(93, 0, 93 );
+
+}
+
+.sideBar .navUl li {
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+.sideBar .navUl div box-icon {
+    display: flex;
+    align-items: center;
+}
+
+
+.navLink {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* List */
+
+
+/* NavUser */
+.sideBar .navUser {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    padding: 2px;
+}
+
+.sideBar .navUser .navUserOptions {
+    display: flex;
+}
+
+.sideBar .navUser .navUserOptions div{
+    background-color: rgb(102, 102, 102);
+    padding: 2.5px;
+    margin: 3px;
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.sideBar .navUser .navUserOptions a,
+.sideBar .navUser  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.sideBar .navUser .navUserOptions a{
+    font-size: 12px;
+}
+
+.sideBar .navUser  a {
+    font-size: 14px;
+    background-color: rgb(102, 102, 102);
+    padding: 2.5px;
+    margin: 3px;
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sideBar .navUser .navUserOptions a:hover,
+.sideBar .navUser  a:hover {
+    color:rgb(93, 0, 93 );
+    cursor: pointer;
+
+}
+/* NavUser */
+
+
+
