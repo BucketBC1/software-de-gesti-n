@@ -66,6 +66,6 @@ export const deleteCategorie = async (req, res) => {
 
     if(result.rowsAffected[0] === 0) {
         return res.status(404).json({message: "Categoria no encontrada"})
-    }
+    } 
     return res.json({message: "Categoria eliminada"})
 }

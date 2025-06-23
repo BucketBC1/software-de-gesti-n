@@ -22,8 +22,6 @@
     padding: 10px;
     border-radius: 10px;
     min-height: 0;
-
-
 }
 
 .contenidoInventario a{
@@ -69,14 +67,14 @@
 
 
 /* ========== categorias ========== */
-.inventario .categoriasInventario .title2 {
+.inventario .content .title2 {
     display: flex;
     color: rgb(93, 0, 93);
     margin-bottom: 5px;
     justify-content: center;
 }
 
-.inventario .categoriasInventario {
+.inventario .content {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -89,7 +87,7 @@
     min-height: 0;
 }
 
-.inventario .categoriasInventario .categoriasList {
+.inventario .content .categoriasList {
     flex: 1;
     overflow-y: auto;
     min-height: 0;
@@ -115,7 +113,7 @@
     background: rgb(93, 0, 93); 
 }
 
-.inventario .categoriasInventario .categoriasList .categoria{
+.inventario .content .categoriasList .categoria{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,11 +124,11 @@
     height: fit-content;
 }
 
-.inventario .categoriasInventario .categoriasList .categoria:hover {
+.inventario .content .categoriasList .categoria:hover {
     background-color: rgb(179, 179, 179);
 }
 
-.inventario .categoriasInventario .categoriasList .categoria a{
+.inventario .content .categoriasList .categoria a{
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -140,10 +138,11 @@
     border: 2px solid rgb(93, 0, 93);
 }
 
-.inventario .categoriasInventario .categoriasList .categoria .nombreCategoria {
+.inventario .content .categoriasList .categoria .nombreCategoria {
     margin-top: 5PX;
     color: black;
     font-size: 12px;
+    text-align: center;
 }
 
 

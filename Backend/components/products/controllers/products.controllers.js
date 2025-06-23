@@ -1,14 +1,32 @@
 import { getConnection } from "../../../database/connection.js";
 import sql from 'mssql';
 
-export const getProducts = async (req, res) => {
+/* export const getProducts = async (req, res) => {
     const pool = await getConnection();
     const result = await pool.request().query("SELECT * FROM productos")
     res.json(result.recordset)
-}
+} */
+
+
+export const getProducts = async (req, res) => {
+    const pool = await getConnection();
+    const { categoriaId } = req.query;
+
+    let result;
+    if (categoriaId) {
+        result = await pool.request()
+            .input('categoriaId', sql.BigInt, categoriaId)
+            .query("SELECT * FROM productos WHERE id_categorias = @categoriaId");
+    } else {
+        result = await pool.request()
+            .query("SELECT * FROM productos");
+    }
+    res.json(result.recordset);
+};
+
 
 export const getProduct = async (req, res) => {
-    const pool = await getConnection()
+    const pool = await getConnection();
     const result = await pool
         .request()
         .input('id', sql.BigInt, req.params.id)
@@ -20,6 +38,7 @@ export const getProduct = async (req, res) => {
     return res.json(result.recordset[0]);
 
 }
+
 
 export const createProduct = async (req, res) => {
     console.log(req.body);

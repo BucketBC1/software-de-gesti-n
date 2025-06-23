@@ -1,0 +1,19 @@
+.tabla {
+    padding: 0 20px;
+}
+
+td {
+    text-align: center;
+}
+
+
+td, th {
+    color: #333;
+}
+
+.cuerpoTabla tr:hover td {
+    color: white;
+    cursor: pointer;
+    background-color: #333;
+    border: none !important;
+}

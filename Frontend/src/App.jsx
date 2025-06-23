@@ -9,6 +9,7 @@ import Tienda from './components/tienda/Tienda.jsx';
 import Ventas from './components/ventas/Ventas.jsx';
 import Compras from './components/compras/Compras.jsx';
 import Inventario from './components/inventario/Inventario.jsx';
+    import Productos from './components/inventario/Productos.jsx';
 import Contactos from './components/contactos/Contactos.jsx';
 
 
@@ -28,6 +29,7 @@ function App() {
             <Route path="/Ventas" element={<Ventas/>}/>
             <Route path="/Compras" element={<Compras/>}/>
             <Route path="/Inventario" element={<Inventario/>}/>
+                <Route path="/productos/:categoriaId" element={<Productos/>}/>
             <Route path="/Contactos" element={<Contactos/>}/>
           </Routes>
         </div>

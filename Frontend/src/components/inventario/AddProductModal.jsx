@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import './styles/AddProductModal.css';
 import {useAddProduct} from './hooks/useAddProduct.jsx'
 
-const AddProductModal = ({ isOpen, onClose }) => {
+const AddProductModal = ({ isOpenProduct, onCloseProduct }) => {
 
 
-  if (!isOpen) return null;
+  if (!isOpenProduct) return null;
 
   const {
     handleSubmit,
@@ -22,24 +22,32 @@ const AddProductModal = ({ isOpen, onClose }) => {
     setPrecio,
     stock,
     setCantidad
-  } = useAddProduct(onClose);
+  } = useAddProduct(onCloseProduct);
 
   const [show, setShow] = useState(false);  
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpenProduct) {
       setTimeout(() => setShow(true), 10);
     } else {
       setShow(false);
     }
-  }, [isOpen]);
+  }, [isOpenProduct]);
 
 
   const handleClose = () => {
     setShow(false);
-    setTimeout(onClose, 300); // Debe coincidir con la duración de la animación CSS
+    setTimeout(onCloseProduct, 300); // Debe coincidir con la duración de la animación CSS
   };
 
+  const handleFormSubmit = async (e) => {
+    const success = await handleSubmit(e)
+    if (success) {
+      handleClose();
+    }
+  }
+
+  
   
   /* ====================== POST ====================== */
 
@@ -48,11 +56,11 @@ const AddProductModal = ({ isOpen, onClose }) => {
     <div className="modal-overlay">
       <div className={`modal-content ${show ? 'show' : ''}`}>
         <button className="close-button" onClick={handleClose}>x</button>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleFormSubmit}>
 
           <div className='content'>
             <div className='divCategoria value1'>
-              <label>Agregar categoría:</label>
+              <label>Categoría:</label>
               <select
                 value={id_categorias}
                 onChange={(e) => setIdCategoria(e.target.value)}

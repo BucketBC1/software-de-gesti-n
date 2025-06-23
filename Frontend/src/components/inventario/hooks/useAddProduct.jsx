@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-export const useAddProduct = (onClose) => {
+export const useAddProduct = () => {
 
 
 
@@ -20,7 +20,7 @@ export const useAddProduct = (onClose) => {
         fetch("http://localhost:5000/categorias")
         .then((response) => response.json())
         .then((data) => {
-            console.log("datos recibidos", data);
+            
             setCategorias(data);
         })
         .catch((error) => {
@@ -28,13 +28,22 @@ export const useAddProduct = (onClose) => {
         });
     }, []);
 
+    const resetForm = () => {
+        setCodigo("");
+        setNombre("");
+        setDescripcion("");
+        setPrecio("");
+        setCantidad("");
+        setIdCategoria("");
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         //Validación básica
         if(!codigo || !nombre || !descripcion || !precio_unitario || !stock || !id_categorias) {
-        alert("completa todos los campos")
-        return
+            alert("Complete todos los campos");
+            return false;
         }
         // Crear objeto producto
         const nuevoProducto = {
@@ -58,19 +67,11 @@ export const useAddProduct = (onClose) => {
 
             if (response.ok) {
                 const data = await response.json();
-                console.log("Producto creado", data);
                 alert("Producto creado correctamente");
 
                 //Limpiar formulario
-                setCodigo("");
-                setNombre("");
-                setDescripcion("");
-                setPrecio("");
-                setCantidad("");
-                /* setImagen() */
-                setIdCategoria("");
-
-                handleClose()
+                resetForm();
+                return true;
             } else {
                 const errorData = await response.json();
                 console.error("Error al guaradar", errorData);
@@ -80,6 +81,7 @@ export const useAddProduct = (onClose) => {
         } catch (error) {
             console.error("Error de red", error);
             alert("Error de red al guardar producto")
+            return false;
         }
     };
 
