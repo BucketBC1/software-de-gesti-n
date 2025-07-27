@@ -1,0 +1,38 @@
+.caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 120PX;
+    height: fit-content;
+    color: black;
+}
+
+.caja:hover {
+    background-color: rgb(179, 179, 179);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.caja a {
+    display: flex;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    border: 2px solid rgb(93, 0, 93);
+}
+
+.nombreCaja {
+    margin-top: 5PX;
+    color: black;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* .caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */

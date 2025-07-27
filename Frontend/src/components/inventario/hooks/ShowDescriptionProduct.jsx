@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import DeleteProducts from './DeleteProducts';
 
-const SwowDescriptionProduct = ({product}) => {
+const SwowDescriptionProduct = ({product, onDeleteProduct}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [currentProduct, setCurrentProduct] = useState(product);
 
@@ -18,6 +18,10 @@ const SwowDescriptionProduct = ({product}) => {
     const handleCancel = () => setIsEditing(false);
 
     const handleDeleteLocal = (id) => {
+        if (onDeleteProduct) {
+            onDeleteProduct(id);
+
+        }
         product.filter(producto => producto.id !== id);
 
     }
@@ -42,7 +46,7 @@ const SwowDescriptionProduct = ({product}) => {
                 </div>
                 <div className='bodyProduct'>
                     <div className='imageProduct'>
-                        <img src="alt"/>
+                        <img src={`http://localhost:5000${currentProduct.imagen}`} alt="Producto" />
                     </div>
                     <div className='descriptionProduct'>
                         {isEditing ? (

@@ -1,5 +1,37 @@
+.productos {
+    background-color: #333;
+}
+
+
+
+.containerShowProducts {
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+    flex: 1;
+    flex-direction: column;
+    margin: 10px auto;
+    width: 60vw;
+    min-width: 550px;
+}
+
+.containerShowProducts .divTitle {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(179, 179, 179);
+    width: 100%;
+    border-radius: 5px;
+}
+
+.divTitle .title3 {
+    margin: 5px 0;
+    color: rgb(93, 0, 93);
+}
+
 .tabla {
     padding: 0 20px;
+    width: 90%;
+
 }
 
 td {

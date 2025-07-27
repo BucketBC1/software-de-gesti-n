@@ -41,15 +41,21 @@ function Inventario() {
                     className="btn btn-secondary">
                     Agregar Producto
                 </button>
+
+                {/* <select>
+                    <option disabled>Agregar filtro</option>
+                    <option value="">Etapa</option>
+                </select> */}
+                
             </div>
-            <AddCategorieModal 
+            {/* <AddCategorieModal 
                 isOpenCategorie={isModalCategorieOpen} 
                 onCloseCategorie={() => {
                     setIsModalCategorieOpen(false);
                     reloadData();
                 }}
-            />
-            <AddProductModal 
+            /> */}
+            <AddProductModal
                 isOpenProduct={isModalProductOpen} 
                 onCloseProduct={() => {
                     setIsModalProductOpen(false)
@@ -57,10 +63,8 @@ function Inventario() {
                 }}
             />
 
-
-
             <div className="content">
-                <h2 className='title2'>Categorías</h2>
+                <h2 className='title2'>Inventario</h2>
                 <ul className="categoriasList">
                     <ShowCategories categories={categories} products ={products}/> 
                 </ul>

@@ -1,6 +1,7 @@
 
 const DeleteProducts = ({id, onDelete}) => {
-    const handleDelete = async () => {
+    const handleDelete = async (e) => {
+        e.stopPropagation();
         if(window.confirm("¿Seguro deseas eliminar este producto?")) {
             const res = await fetch(`http://localhost:5000/productos/${id}`, {
                 method: "DELETE"

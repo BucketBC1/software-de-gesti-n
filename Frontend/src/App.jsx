@@ -7,9 +7,12 @@ import Buscador from './components/layouts/Buscador.jsx';
 import Inicio from './components/inicio/Inicio.jsx';
 import Tienda from './components/tienda/Tienda.jsx';
 import Ventas from './components/ventas/Ventas.jsx';
+    import Ordenes from './components/ventas/Ordenes.jsx';
+
 import Compras from './components/compras/Compras.jsx';
 import Inventario from './components/inventario/Inventario.jsx';
     import Productos from './components/inventario/Productos.jsx';
+
 import Contactos from './components/contactos/Contactos.jsx';
 
 
@@ -27,6 +30,9 @@ function App() {
             <Route exact path="/" element={<Inicio/>}/>
             <Route path="/Tienda" element={<Tienda/>}/>
             <Route path="/Ventas" element={<Ventas/>}/>
+                <Route path="/ventas/ordenes" element={<Ordenes/>}/>
+
+
             <Route path="/Compras" element={<Compras/>}/>
             <Route path="/Inventario" element={<Inventario/>}/>
                 <Route path="/productos/:categoriaId" element={<Productos/>}/>

@@ -1,32 +1,45 @@
 import { useState, useEffect } from "react";
 
 
-export const useAddProduct = () => {
-
-
+export const useAddProduct = ( file) => {
 
     const [categorias, setCategorias] = useState([]);
     const [id_categorias, setIdCategoria] = useState("");
 
+    const [subcategorias, setSubcategorias] = useState([]);
+    const [id_subcategoria, setIdSubcategoria] = useState("");
 
     const [codigo, setCodigo] = useState("");
     const [nombre, setNombre] = useState("");
     const [descripcion, setDescripcion] = useState("");
     const [precio_unitario, setPrecio] = useState("");
     const [stock, setCantidad] = useState("");
-    /* const [imagen, setImagen] = useState(""); */
+
+    
 
     useEffect(() => {
         fetch("http://localhost:5000/categorias")
         .then((response) => response.json())
         .then((data) => {
-            
             setCategorias(data);
         })
         .catch((error) => {
             console.error("Error al cargar categorías", error);
         });
     }, []);
+
+
+    useEffect(() => {
+        fetch("http://localhost:5000/subcategorias")
+        .then((response) => response.json())
+        .then((data) => {
+            setSubcategorias(data);
+        })
+        .catch((error) => {
+            console.error("Error al cargar subcategorías", error);
+        });
+    }, []);
+
 
     const resetForm = () => {
         setCodigo("");
@@ -35,38 +48,39 @@ export const useAddProduct = () => {
         setPrecio("");
         setCantidad("");
         setIdCategoria("");
+        setIdSubcategoria("");
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //Validación básica
-        if(!codigo || !nombre || !descripcion || !precio_unitario || !stock || !id_categorias) {
+        if(!codigo || !nombre || !descripcion  || !stock || !id_categorias || !id_subcategoria) {
             alert("Complete todos los campos");
             return false;
         }
-        // Crear objeto producto
-        const nuevoProducto = {
-            codigo,
-            nombre,
-            descripcion,
-            precio_unitario,
-            stock,
-            /* imagen, */
-            id_categorias: parseInt(id_categorias)
-        };
+
+        const formData = new FormData()
+        formData.append("codigo", codigo);
+        formData.append("nombre", nombre);
+        formData.append("descripcion", descripcion);
+        formData.append("precio_unitario", precio_unitario);
+        formData.append("stock", stock);
+        formData.append("id_categorias", id_categorias);
+        formData.append("id_subcategoria", id_subcategoria);
+
+        if(file) {
+            formData.append("imagen", file);
+        }
+    
 
         try {
             const response = await fetch("http://localhost:5000/productos", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(nuevoProducto)
+                body: formData
             });
 
             if (response.ok) {
-                const data = await response.json();
+                await response.json();
                 alert("Producto creado correctamente");
 
                 //Limpiar formulario
@@ -88,8 +102,11 @@ export const useAddProduct = () => {
     return {
         handleSubmit,
         categorias,
-        id_categorias,
         setIdCategoria,
+        id_categorias,
+        subcategorias,
+        id_subcategoria,
+        setIdSubcategoria,
         codigo,
         setCodigo,
         nombre,

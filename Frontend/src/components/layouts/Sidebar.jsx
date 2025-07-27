@@ -20,14 +20,14 @@ function Nav() {
                             </li>
                         </div>
                     </Link>
-                    <Link to="/Tienda" className='navLink'>
+                    {/* <Link to="/Tienda" className='navLink'>
                         <div>
                             <box-icon name='store' color='#ffffff' size='17px'></box-icon>
                             <li className='navIl'>
                                 Tienda
                             </li>
                         </div>
-                    </Link>
+                    </Link> */}
                     <Link to="/Ventas" className='navLink'>
                         <div>
                             <box-icon name='purchase-tag-alt' color='#ffffff' size='17px'></box-icon>
@@ -36,14 +36,14 @@ function Nav() {
                             </li>
                         </div>
                     </Link>
-                    <Link to="/Compras" className='navLink'>
+                    {/* <Link to="/Compras" className='navLink'>
                         <div>
                             <box-icon name='cart-alt' color='#ffffff' size='17px'></box-icon>
                             <li className='navIl'>
                                 Compras
                             </li>
                         </div>
-                    </Link>
+                    </Link> */}
                     <Link to="/Inventario" className='navLink'>
                         <div>
                             <box-icon name='cube' color='#ffffff' size='17px'></box-icon>
@@ -52,14 +52,14 @@ function Nav() {
                             </li>
                         </div>
                     </Link>
-                    <Link to="/Contactos" className='navLink'>
+                    {/* <Link to="/Contactos" className='navLink'>
                         <div>
                             <box-icon type='solid' name='contact' color='#ffffff' size='17px'></box-icon>
                             <li className='navIl'>
                                 Contactos
                             </li>
                         </div>
-                    </Link>
+                    </Link> */}
                 </ul>
             </div>
             <div className='navUser'>

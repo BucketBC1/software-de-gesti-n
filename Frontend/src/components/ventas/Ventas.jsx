@@ -1,8 +1,60 @@
+import { useEffect, useState } from 'react';
+import './styles/Ventas.css';
+import MostrarCajas from './hooks/MostrarCajas';
+import AgregarCajaModal from './AgregarCajaModal';
+
+
 function Ventas() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [cajas, setCajas] = useState([]);
+
+  const reloadData = async () => {
+    const c = await fetch('http://localhost:5000/cajas').then(res => res.json());
+    setCajas(c);
+  }
+
+  useEffect(() => {
+    reloadData();
+  }, []);
+
+
+
   return (
-    <div>
-      <h1>Ventas</h1>
-      <p>Esta es la página de ventas.</p>
+    <div className='ventas'>
+      <nav className='contenidoVentas'>
+        <a href="#Ventas">Ventas</a>
+        <a href="#Mis ventas">Mis ventas</a>
+        <a href="#Alertas">Alertas</a>
+        <a href="#Historial">Historial</a>
+      </nav>
+
+      <div className='botonesVentas'>
+
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className='btn btn-primary'>
+            Agregar caja
+        </button>
+
+      </div>
+
+      <AgregarCajaModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false)
+          reloadData();
+        }}
+
+      />
+
+      <div className='content'>
+        <h2 className='title2'>Cajas</h2>
+        <ul className='cajasList'>
+          <MostrarCajas cajas={cajas}/>
+        </ul>
+      </div>
+
     </div>
   );
 }
