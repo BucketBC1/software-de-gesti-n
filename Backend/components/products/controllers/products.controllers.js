@@ -115,7 +115,10 @@ export const createProduct = async (req, res) => {
 };
 
 
-export const updateProduct = async (req, res) => {
+
+
+export const updateProductById = async (req, res) => {
+
     const pool = await getConnection()
 
     const result = await pool
@@ -139,7 +142,7 @@ export const updateProduct = async (req, res) => {
         return res.status(404).json({message: "Producto no encontrado"})
     }
     return res.json({message: "Producto actualizado"})
-}
+} 
 
 export const deleteProduct = async (req, res) => {
 

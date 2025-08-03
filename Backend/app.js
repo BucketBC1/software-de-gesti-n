@@ -3,6 +3,8 @@ import productsRoutes from './routes/products.routes.js';
 import categoriesRoutes from './routes/categories.routes.js';
 import subCategoriesRoutes from './routes/subCategories.routes.js';
 import cajasRoutes from './routes/caja.routes.js';
+import detalle_ventaRoutes from './routes/detalle_venta.routes.js'
+import ventaRoutes from './routes/venta.routes.js'
 
 import path from 'path';
 import cors from 'cors';
@@ -18,8 +20,10 @@ app.use(express.json())
 
 app.use(cors());
 app.use('/cajas', cajasRoutes)
+app.use('/ventas', ventaRoutes)
+app.use('/detalles', detalle_ventaRoutes)
 app.use('/categorias', categoriesRoutes)
-app.use('/productos', productsRoutes)
+app.use('/productos', productsRoutes, detalle_ventaRoutes)
 app.use('/subcategorias', subCategoriesRoutes)
 
 

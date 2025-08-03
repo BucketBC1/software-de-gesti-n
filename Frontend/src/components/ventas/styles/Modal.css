@@ -47,7 +47,6 @@
 }
 
 
-
 /* ======== formulario ========= */
 .formulario {
   display: flex;
@@ -79,3 +78,25 @@
   cursor: pointer;
 }
 /* ======== formulario ========= */
+
+
+
+/* ======== formulario confirmar orden de compra ========= */
+
+.tituloConfirmar {
+  font-size: 20px;
+  color: rgb(93, 0, 93);
+}
+
+.formulario .divProductos {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.costoTotal {
+  display: flex;
+  margin: 0 auto;
+}
+
+/* ======== formulario confirmar orden de compra ========= */

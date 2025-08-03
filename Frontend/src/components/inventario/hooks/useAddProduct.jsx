@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-export const useAddProduct = ( file) => {
+export const useAddProduct = (file) => {
 
     const [categorias, setCategorias] = useState([]);
     const [id_categorias, setIdCategoria] = useState("");

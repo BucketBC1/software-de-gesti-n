@@ -11,6 +11,8 @@ function Ventas() {
     const [categorias, setCategorias] = useState([]);
     const [subcategorias, setSubcategorias] = useState([]);
     const [productos, setProductos] = useState([]);
+    const [ventas, setVentas] = useState([]);
+    const [numeroOrdenActual, setNumeroOrdenActual] = useState("0001");
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
     const [isOpen, setIsOpen] = useState(null);
     const [productosSeleccionados, setProductosSeleccionados] = useState([]);
@@ -29,6 +31,19 @@ function Ventas() {
         fetch('http://localhost:5000/productos')
             .then(res => res.json())
             .then(data => setProductos(data));
+        fetch('http://localhost:5000/ventas')
+            .then(res => res.json())
+            .then(data => {
+                setVentas(data);
+
+                if (data.length === 0) {
+                    setNumeroOrdenActual("0001");
+                } else {
+                    const maxNum = Math.max(...data.map(v => parseInt(v.numero_orden, 10)));
+                    const siguiente = (maxNum + 1).toString().padStart(4, "0");
+                    setNumeroOrdenActual(siguiente);
+                }
+            });
     }, []);
 
     const categoriasConProductos = categorias.filter(cat =>
@@ -86,6 +101,9 @@ function Ventas() {
             <ConfirmarOrdenModal
                 isOpen={confirmarOrdenModalOpen}
                 onClose={() => setConfirmarOrdenModalOpen(false)}
+                productos={productosSeleccionados}
+                totalOrden={totalOrden}
+                numeroOrden={numeroOrdenActual}
             />
 
 
@@ -114,7 +132,7 @@ function Ventas() {
                                         <td>{producto.cantidad}</td>
                                         <td>${producto.precio_unitario * producto.cantidad}</td>
                                         <td>
-                                            <box-icon 
+                                            <box-icon
                                                 name='trash' 
                                                 color='#ff0000'
                                                 style={{cursor: "pointer"}}
