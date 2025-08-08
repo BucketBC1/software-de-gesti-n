@@ -24,12 +24,12 @@ function Inventario() {
 
     return(
         <div className="inventario">
-            <nav className="contenidoInventario">
+            {/* <nav className="contenidoInventario">
                 <a href="#Categorías">Categorías</a>
                 <a href="#Mi tienda">Mi tienda</a>
                 <a href="#Alertas">Alertas</a>
                 <a href="#Historial">Historial</a>
-            </nav>
+            </nav> */}
             <div className="botonesInventario">
                 {/* <button 
                     onClick={() => setIsModalCategorieOpen(true)}

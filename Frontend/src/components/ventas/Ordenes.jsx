@@ -3,6 +3,7 @@ import './styles/Ordenes.css';
 import CantidadProductoModal from './CantidadProductoModal';
 import ConfirmarOrdenModal from './ConfirmarOrdenModal';
 
+
 import { useEffect, useState } from 'react';
 
 
@@ -50,8 +51,6 @@ function Ventas() {
         productos.some(prod => prod.id_categorias === cat.id)
     );
 
-
-
     const subcatFiltradas = subcategorias.filter(
         sub => {
             if (String(sub.id_categoria) === String(categoriaSeleccionada) && 
@@ -64,23 +63,9 @@ function Ventas() {
         (acc, producto) => acc + (producto.precio_unitario * producto.cantidad), 0
     );
 
-
     return(
-        <div className='ventas'>
-            <nav className='contenidoVentas'>
-                <a href="#Ventas">Ventas</a>
-                <a href="#Mis ventas">Mis ventas</a>
-                <a href="#Alertas">Alertas</a>
-                <a href="#Historial">Historial</a>
-            </nav>
-
-            <div className='botonesVentas'>
-                <button
-                    className='btn btn-primary'>
-                    Crear descuento
-                </button>
-            </div>
-
+        <>
+            
             <CantidadProductoModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -95,7 +80,6 @@ function Ventas() {
                     setIsModalOpen(false);
                     setProductoSeleccionado(null);
                 }}
-
             />
 
             <ConfirmarOrdenModal
@@ -210,7 +194,7 @@ function Ventas() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

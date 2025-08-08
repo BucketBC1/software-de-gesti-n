@@ -61,9 +61,9 @@ const SwowDescriptionProduct = ({product, onDeleteProduct}) => {
                                 <div className='description'>
                                     <p><strong>Descripción:</strong> {currentProduct.descripcion}</p>
                                 </div>
-                                <div className='unidadMedida-row'>
+                                {/* <div className='unidadMedida-row'>
                                     <span><strong>Unidades de medida:</strong></span>
-                                </div>
+                                </div> */}
                                 <div className='price-stock-row'>
                                     <div className='price text'>
                                         <span><strong>Precio por unidad:</strong>  {currentProduct.precio_unitario}</span>

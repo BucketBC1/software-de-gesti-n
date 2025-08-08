@@ -32,7 +32,7 @@ export const useAgregarCajas = () => {
 
             if (response.ok) {
                 await response.json();
-                alert("Producto creado correctamente");
+                alert("Caja creada correctamente");
 
                 resetForm();
                 return true;

@@ -48,6 +48,7 @@
     margin-top: 10px;
 }
 
+
 .productosSeleccionados th,
 .productosSeleccionados td {
     width: 30%;
@@ -142,6 +143,7 @@
 
     margin: 5px auto 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: #cccccc;
     width: 30vw;
@@ -160,6 +162,7 @@
     outline: none;
     border: none;
     border-radius: 4px;
+    margin-top: 2px;
 }
 
 .btnDescripcionProductos label{

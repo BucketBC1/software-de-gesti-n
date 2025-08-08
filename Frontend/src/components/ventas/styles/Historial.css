@@ -1,0 +1,12 @@
+.ordenes {
+    margin: 0 auto;
+}
+
+
+.orden th,
+.orden td {
+    width: 30%;
+    text-align: center;
+    word-break: break-word;
+
+}

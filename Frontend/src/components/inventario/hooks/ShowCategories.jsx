@@ -18,7 +18,7 @@ const ShowCategories = ({categories, products}) => {
           onClick={() => navigate(`/productos/${categoria.id}`)}
           style={{cursor: "pointer"}}
         >
-          <a href="#"></a>
+          <a></a>
           <span className="nombreCategoria">{categoria.nombre}</span>
         </li>
       ))}

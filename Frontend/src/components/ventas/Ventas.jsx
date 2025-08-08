@@ -22,12 +22,14 @@ function Ventas() {
 
   return (
     <div className='ventas'>
-      <nav className='contenidoVentas'>
-        <a href="#Ventas">Ventas</a>
-        <a href="#Mis ventas">Mis ventas</a>
-        <a href="#Alertas">Alertas</a>
+      {/* <nav className='contenidoVentas'>
+        <a href="#Ventas">
+          Ventas
+
+        </a>
+        <a href="#Ventas">Cajas</a>
         <a href="#Historial">Historial</a>
-      </nav>
+      </nav> */}
 
       <div className='botonesVentas'>
 
@@ -49,7 +51,6 @@ function Ventas() {
       />
 
       <div className='content'>
-        <h2 className='title2'>Cajas</h2>
         <ul className='cajasList'>
           <MostrarCajas cajas={cajas}/>
         </ul>

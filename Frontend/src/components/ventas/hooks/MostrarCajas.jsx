@@ -13,7 +13,7 @@ function MostrarCajas({cajas}) {
                 key={registradora.id}
                     className="caja"
                     style={{cursor: "pointer"}}
-                    onClick={() => navigate(`/ventas/Ordenes`)}
+                    onClick={() => navigate(`/contenido/${registradora.id}`)}
                 >
                     <a href=""></a>
                     <span className="nombreCaja">{registradora.nombre_caja}</span>

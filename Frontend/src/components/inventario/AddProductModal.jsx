@@ -154,13 +154,13 @@ const AddProductModal = ({ isOpenProduct, onCloseProduct }) => {
 
 
           {/* ====unidad de medida==== */}
-          <div className='divUnidadMedida'>
+          {/* <div className='divUnidadMedida'>
               <label>Agregar unidad de medida:</label>
               <select>
                 <option disabled>Unidad de medida</option>
                     <option></option>
               </select>
-          </div>
+          </div> */}
           {/* ====unidad de medida==== */}
 
 

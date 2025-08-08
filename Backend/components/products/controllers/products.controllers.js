@@ -130,11 +130,9 @@ export const updateProductById = async (req, res) => {
     .input('precio_unitario', sql.Decimal, req.body.precio_unitario)
     .input('stock', sql.Int, req.body.stock)
     .input('imagen', sql.VarChar, req.body.imagen)
-    .input('id_categorias', sql.BigInt, req.body.id_categorias)
-    .input('id_subcategoria', sql.BigInt, req.body.id_subcategoria)
-    .input('id_unidad_medida', sql.VarBinary, req.body.id_unidad_medida)
+
     .query(
-        "UPDATE productos SET codigo = @codigo, nombre = @nombre, descripcion = @descripcion, precio_unitario = @precio_unitario, stock = @stock, imagen = @imagen, id_categorias = @id_categorias, id_subcategoria = @id_subcategoria, id_unidad_medida = @id_unidad_medida WHERE id = @id"
+        "UPDATE productos SET codigo = @codigo, nombre = @nombre, descripcion = @descripcion, precio_unitario = @precio_unitario, stock = @stock, imagen = @imagen WHERE id = @id"
     )
 
     console.log(result);

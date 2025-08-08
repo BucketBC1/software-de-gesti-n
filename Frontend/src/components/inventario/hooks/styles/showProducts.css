@@ -30,7 +30,7 @@
 
 .tabla {
     padding: 0 20px;
-    width: 90%;
+    width: 100%;
 
 }
 
@@ -40,7 +40,10 @@ td {
 
 
 td, th {
+    width: 30%;
     color: #333;
+    text-align: center;
+    word-break: break-word;
 }
 
 .cuerpoTabla tr:hover td {

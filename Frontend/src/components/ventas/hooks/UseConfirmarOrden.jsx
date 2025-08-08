@@ -1,15 +1,16 @@
-
+import { useParams } from "react-router-dom";
 
 export const UseConfirmarOrden = () => {
 
-
+    const {idCaja} = useParams();
 
     const handleSubmit = async (e, productosSeleccionados, numeroOrden, totalOrden) => {
         e.preventDefault();
 
         const nuevaOrden = {
             numero_orden: numeroOrden,
-            precio_total: totalOrden
+            precio_total: totalOrden,
+            id_caja: idCaja
         }
 
         try {

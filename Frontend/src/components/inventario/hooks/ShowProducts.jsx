@@ -10,7 +10,7 @@ const ShowProducts = ({setSelectedProduct}) => {
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState(null);
     const [subcategories, setSubcategories] = useState([]);
-    const {categoriaId} =useParams();
+    const {categoriaId} = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:5000/categorias/${categoriaId}`)
@@ -75,7 +75,7 @@ const ShowProducts = ({setSelectedProduct}) => {
                                         <th>Nombre</th>
                                         <th>Precio unidad</th>
                                         <th>Cantidad</th>
-                                        <th>Eliminar producto</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody className="cuerpoTabla">
@@ -86,7 +86,7 @@ const ShowProducts = ({setSelectedProduct}) => {
                                         >
                                             <td>{producto.codigo}</td>
                                             <td>{producto.nombre}</td>
-                                            <td>{producto.precio_unitario}</td>
+                                            <td>${producto.precio_unitario}</td>
                                             <td>{producto.stock}</td>
                                             <td>
                                                 <DeleteProducts id={producto.id} onDelete={handleDeleteLocal}/>
