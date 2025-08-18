@@ -51,6 +51,7 @@ function Ventas() {
       />
 
       <div className='content'>
+        <h2 className='title2'>Ventas</h2>
         <ul className='cajasList'>
           <MostrarCajas cajas={cajas}/>
         </ul>

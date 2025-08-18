@@ -20,15 +20,15 @@ function Nav() {
                             </li>
                         </div>
                     </Link>
-                    {/* <Link to="/Tienda" className='navLink'>
+                    <Link to="/tienda" className='navLink'>
                         <div>
                             <box-icon name='store' color='#ffffff' size='17px'></box-icon>
                             <li className='navIl'>
                                 Tienda
                             </li>
                         </div>
-                    </Link> */}
-                    <Link to="/Ventas" className='navLink'>
+                    </Link>
+                    <Link to="/ventas" className='navLink'>
                         <div>
                             <box-icon name='purchase-tag-alt' color='#ffffff' size='17px'></box-icon>
                             <li className='navIl'>
@@ -44,7 +44,7 @@ function Nav() {
                             </li>
                         </div>
                     </Link> */}
-                    <Link to="/Inventario" className='navLink'>
+                    <Link to="/inventario" className='navLink'>
                         <div>
                             <box-icon name='cube' color='#ffffff' size='17px'></box-icon>
                             <li className='navIl'>
@@ -63,13 +63,13 @@ function Nav() {
                 </ul>
             </div>
             <div className='navUser'>
-                <a>NOMBRE DE USUARIO</a>
+                <button>NOMBRE DE USUARIO</button>
                 <div className='navUserOptions'>
                     <div>
-                        <a>Configuración</a>
+                        <button>Configuración</button>
                     </div>
                     <div>
-                        <a>Ayuda y soporte</a>
+                        <button>Ayuda y soporte</button>
                     </div>
                 </div>
             </div>

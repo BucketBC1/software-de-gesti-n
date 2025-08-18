@@ -109,16 +109,19 @@
     height: 30px;
 }
 
-.sideBar .navUser .navUserOptions a,
-.sideBar .navUser  a {
+.sideBar .navUser .navUserOptions button,
+.sideBar .navUser  button {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
 
 }
 
-.sideBar .navUser .navUserOptions a{
+.sideBar .navUser .navUserOptions button{
     font-size: 12px;
 }
 

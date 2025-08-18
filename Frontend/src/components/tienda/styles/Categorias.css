@@ -1,0 +1,65 @@
+.categoriasList {
+    overflow-y: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 20px 0;
+}
+
+.categoriasList .categoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 120PX;
+    height: fit-content;
+}
+
+.categoriasList .categoria a{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 2px solid rgb(93, 0, 93);
+}
+
+.categoriasList .categoria .nombreCategoria {
+    margin-top: 5PX;
+    color: black;
+    font-size: 12px;
+    text-align: center;
+}
+
+.categoriasList .categoria:hover {
+    background-color: rgb(179, 179, 179);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* === Scrollbar === */
+
+.categoriasList::-webkit-scrollbar,
+.content::-webkit-scrollbar {
+    width: 10px;
+    background: rgb(204, 204, 204);
+    border-radius: 8px;
+}
+
+.categoriasList::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb {
+    background: rgb(102, 102, 102);
+    border-radius: 8px;
+}
+
+.categoriasList::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover {
+    background: rgb(93, 0, 93); 
+}
+
+/* === Scrollbar === */
