@@ -2,21 +2,54 @@ import { useEffect, useState } from 'react';
 import './styles/Ventas.css';
 import MostrarCajas from './hooks/MostrarCajas';
 import AgregarCajaModal from './AgregarCajaModal';
+/* import { useAuth } from '../../context/AuthContext.jsx'; */
 
 
 function Ventas() {
+  /* const { token } = useAuth(); */
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cajas, setCajas] = useState([]);
 
   const reloadData = async () => {
-    const c = await fetch('http://localhost:5000/cajas').then(res => res.json());
-    setCajas(c);
+    const c = await fetch('http://localhost:5000/cajas')
+      .then(res => res.json());
+      setCajas(c);
   }
 
   useEffect(() => {
     reloadData();
   }, []);
+
+  /* const reloadData = async () => {
+    try {
+      console.log("Token en Ventas:", token);
+      const res = await fetch('http://localhost:5000/cajas', {
+        headers: {
+          "Content-Type": "application/json",
+          "authorization": `Bearer ${token}`
+        }
+      });
+
+      if(!res.ok){
+        throw new Error(`Error ${res.status}: No autorizado o fallo en la petición`);
+      }
+
+      const data = await res.json();
+      setCajas(Array.isArray(data) ? data : []);
+    } catch (error) {
+      console.error("Error cargando cajas:", error);
+      setCajas([]);
+
+    }
+  };
+
+  useEffect(() => {
+    reloadData();
+    if (token) {
+      reloadData();
+    }
+  }, [token]); */
 
 
 
@@ -38,7 +71,6 @@ function Ventas() {
           className='btn btn-primary'>
             Agregar caja
         </button>
-
       </div>
 
       <AgregarCajaModal
@@ -47,7 +79,6 @@ function Ventas() {
           setIsModalOpen(false)
           reloadData();
         }}
-
       />
 
       <div className='content'>

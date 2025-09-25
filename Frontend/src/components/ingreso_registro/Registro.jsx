@@ -36,7 +36,7 @@ const Registro = () => {
                 {contenido === '#persona' && <RegistroPersona/>}
                 {contenido === '#empresa' && <RegistroEmpresa/>}
             </div>
-            <Link to ="/ingreso">
+            <Link to ="/">
                 <button className='btn'>Ingresar</button>
             </Link>
             

@@ -1,7 +1,9 @@
 import { useState } from "react"
+/* import { useAuth } from "../../../context/AuthContext.jsx"; */
 
 
 export const useAgregarCajas = () => {
+    /* const { token } = useAuth(); */
 
     const [nombre_caja, setNombre] = useState("");
 
@@ -25,7 +27,8 @@ export const useAgregarCajas = () => {
             const response = await fetch("http://localhost:5000/cajas", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json"/* ,
+                    "authorization": `Bearer ${token}` */
                 },
                 body: JSON.stringify(nuevaCaja)
             });

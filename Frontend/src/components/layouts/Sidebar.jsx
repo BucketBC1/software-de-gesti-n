@@ -12,7 +12,7 @@ function Nav() {
                     <a className=''>NOMBRE DE EMPRESA</a>
                 </div>
                 <ul className='navUl'>
-                    <Link to="/" className='navLink'>
+                    <Link to="/inicio" className='navLink'>
                         <div>
                             <box-icon name='home-alt-2'color='#ffffff' size='17px'></box-icon>
                             <li className='navIl'>

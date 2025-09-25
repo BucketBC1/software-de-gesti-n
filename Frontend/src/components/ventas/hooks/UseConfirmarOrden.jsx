@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
+/* import { useAuth } from "../../../context/AuthContext.jsx"; */
 
 export const UseConfirmarOrden = () => {
+    /* const { token } = useAuth(); */
 
     const {idCaja} = useParams();
 
@@ -17,7 +19,8 @@ export const UseConfirmarOrden = () => {
             const responseOrden = await fetch("http://localhost:5000/ventas", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json"/* ,
+                    "authorization": `Bearer ${token}` */
                 },
                 body: JSON.stringify(nuevaOrden)
             });
@@ -51,7 +54,8 @@ export const UseConfirmarOrden = () => {
             const responseDetalle = await fetch("http://localhost:5000/detalles", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json"/* ,
+                    "authorization": `Bearer ${token}` */
                 },
                 body: JSON.stringify({ productos: detalleVenta })
             });
@@ -71,7 +75,8 @@ export const UseConfirmarOrden = () => {
             const responseActualizarStock = await fetch("http://localhost:5000/productos", {
                 method: "PUT",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json"/* ,
+                    "authorization": `Bearer ${token}` */
                 },
                 body: JSON.stringify({ productos: productosParaActualizar  })
             });
